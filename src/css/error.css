@@ -1,0 +1,21 @@
+.error-wrapper {
+    /* border: 1px solid red; */
+    left: 50%;
+    top: 200px;
+    position: fixed;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.error-404 {
+    color: #94a3b8;
+    font-family: monospace;
+    font-size: 56px;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+.error-text {
+    font-family: monospace;
+    font-size: 20px;
+}

@@ -1,0 +1,65 @@
+.summary-namecard {
+    width: 100%;
+    max-height: 250px;
+}
+
+.summary-spread-wrapper {
+    /* border: 2px solid red; */
+    margin: 20px 50px;
+}
+
+.summary-avatar {
+    height: 100px;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.summary-text-wrapper {
+    display: inline-block;
+    margin-left: 30px;
+    
+}
+
+.summary-name {
+    font-size: 45px;
+    font-style: italic;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.summary-title {
+    font-size: 25px;
+    font-style: italic;
+    margin-left: 5px;
+    color: #22c55e;
+}
+
+.endrosement-img {
+    height: 50px;
+    margin-left: 20px;
+    padding-bottom: 40px;
+}
+
+.summary-ranks-wrapper {
+    border: 1px dashed red;
+    margin-left: 70px;
+}
+
+.summary-wrapper {
+    border: 1px dashed blue;
+}
+
+.summary-info-wrapper {
+    border: 1px dashed rgb(95, 207, 95);
+    display: block;
+    margin: 10px;
+}
+
+.icon-wrapper {
+    display: inline-block;
+    margin: 0px 2px;
+}
+
+.rank-icon {
+    height: 50px;
+}

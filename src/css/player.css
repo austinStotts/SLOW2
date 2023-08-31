@@ -1,0 +1,26 @@
+.name-wrapper {
+    border: 2px solid #94a3b8;
+    border-radius: 5px;
+    background-color: #475569;
+    position: fixed;
+    top: 50px;
+    left: 25%;
+    padding: 10px;
+}
+
+.player-name {
+    display: inline-block;
+    font-family: monospace;
+    font-size: 30px;
+    color: #22c55e;
+    font-style: italic;
+}
+
+.player-id {
+    display: inline-block;
+    font-family: monospace;
+    font-size: 18px;
+    color: #34d399;
+    margin-left: 3px;
+    
+}

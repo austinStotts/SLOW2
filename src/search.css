@@ -39,6 +39,7 @@ body {
     height: 30px;
     border-radius: 8px;
     padding: 3px;
+    padding-right: 6px;
     font-size: 18px;
     font-family: monospace;
     background-color: #475569;
@@ -72,5 +73,5 @@ body {
 
 .search-button:hover {
     cursor: pointer;
-    color: #334155;
+    color: #22c55e;
 }

@@ -1,0 +1,39 @@
+.player-error-wrapper {
+    border: 2px solid #94a3b8;
+    border-radius: 5px;
+    background-color: #475569;
+    position: fixed;
+    top: 200px;
+    left: 50%;
+    padding: 10px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.error-text-top {
+    font-size: 20px;
+    font-family: monospace;
+    margin: 5px 20px;
+}
+
+.error-text {
+
+}
+
+.player-error-list {
+
+}
+
+.error-return {
+    font-family: monospace;
+    font-size: 12px;
+    font-style: italic;
+    transition-duration: 0.2s;
+    margin-left: 40px;
+}
+
+.error-return:hover {
+    color: #22c55e;
+    cursor: pointer;
+}
