@@ -26,12 +26,29 @@
 }
 
 
+.back-search {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-family: monospace;
+    font-style: italic;
+    color: #22c55e;
+    font-size: 20px;
+    transition-duration: 0.1s;
+}
 
+.back-search:hover {
+    cursor: pointer;
+    color: #3ee77c;
+    font-size: 21px;
+
+}
 
 
 .player-layer-details-wrapper {
     display: grid;
     grid-template-columns: [l] 10% [l1] 40% [m] 40% [r1] 10% [r];
+    margin-top: 30px;
 }
 
 .load-controller-wrapper {

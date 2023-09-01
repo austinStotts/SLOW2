@@ -7,6 +7,7 @@ import PlayerError from "./playerError";
 import Summary from "./player-components/summary";
 import LoadController from "./player-components/loadController";
 import PlayerDetails from "./player-components/playerDetails";
+import Back from "./back";
 
 
 class Player extends React.Component {
@@ -59,6 +60,7 @@ class Player extends React.Component {
             } else {
                 return ( // this is the main view
                     <div className="player-wrapper">
+                        <Back />
                         <div className="player-layer-summary-wrapper">
                             <Summary data={this.state.playerdata}/>
                         </div>
