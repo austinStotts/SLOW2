@@ -1,6 +1,6 @@
 import React from "react";
 
-import './search.css';
+import './css/search.css';
 import axios from "axios";
 
 export default class Search extends React.Component {

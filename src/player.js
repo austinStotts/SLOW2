@@ -5,6 +5,8 @@ import "./css/player.css";
 import axios from "axios";
 import PlayerError from "./playerError";
 import Summary from "./player-components/summary";
+import LoadController from "./player-components/loadController";
+import PlayerDetails from "./player-components/playerDetails";
 
 
 class Player extends React.Component {
@@ -15,10 +17,15 @@ class Player extends React.Component {
             playerid: this.props.params.playerid,
             playerError: false,
             loading: true,
-            playerdata: ''
+            playerdata: '',
+            playerDetailsData: '',
+            playerDetailsView: "none",
+            lc_hidden: false,
         }
 
         this.getPlayerSummary = this.getPlayerSummary.bind(this);
+        this.getPlayerDetails = this.getPlayerDetails.bind(this);
+        this.changeDetailsView = this.changeDetailsView.bind(this);
     }
 
     componentDidMount () {
@@ -31,6 +38,16 @@ class Player extends React.Component {
         .catch(error => {this.setState({ playerError: true, loading: false })})
     }
 
+    getPlayerDetails () {
+        axios.get(`https://overfast-api.tekrop.fr/players/${this.state.playerid}/stats/summary`)
+        .then(data => {this.setState({ playerDetailsData: data.data, lc_hidden: true, playerDetailsView: "heros" }); console.log(data.data)})
+        .catch(error => {this.setState({ playerError: true, loading: false })})
+    }
+
+    changeDetailsView (view) {
+        this.setState({ playerDetailsView: view })
+    }
+
     render () {
         if(this.state.loading) {
             return (<div>loading</div>)
@@ -40,9 +57,21 @@ class Player extends React.Component {
                     <PlayerError />
                 )
             } else {
-                return (
+                return ( // this is the main view
                     <div className="player-wrapper">
-                        <Summary data={this.state.playerdata}/>
+                        <div className="player-layer-summary-wrapper">
+                            <Summary data={this.state.playerdata}/>
+                        </div>
+                        <div className="player-layer-details-wrapper">
+                            <LoadController gpd={this.getPlayerDetails} hidden={this.state.lc_hidden}/>
+                            <div className="details-view-switch-wrapper" hidden={!this.state.lc_hidden}>
+                                <center>
+                                    <button className="details-view-switch-button heros" onClick={() => { this.changeDetailsView('heros') }}>HEROS</button>
+                                    <button className="details-view-switch-button roles" onClick={() => { this.changeDetailsView('roles') }}>ROLES</button>
+                                </center>
+                            </div>
+                            <PlayerDetails data={this.state.playerDetailsData} view={this.state.playerDetailsView}/>
+                        </div>
                     </div>
                 )
             }

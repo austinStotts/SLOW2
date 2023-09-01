@@ -24,3 +24,52 @@
     margin-left: 3px;
     
 }
+
+
+
+
+
+.player-layer-details-wrapper {
+    display: grid;
+    grid-template-columns: [l] 10% [l1] 40% [m] 40% [r1] 10% [r];
+}
+
+.load-controller-wrapper {
+    grid-column: l1 / r1;
+}
+
+.load-button {
+    background-color: #475569;
+    border: 2px solid #94a3b8;
+    color: white;
+    border-radius: 8px;
+    padding: 8px;
+    font-family: monospace;
+    transition-duration: 0.2s;
+}
+
+.load-button:hover {
+    cursor: pointer;
+    color: #22c55e;
+}
+
+.details-view-switch-wrapper {
+    grid-column: l1 / r1;
+}
+
+.details-view-switch-button {
+    margin: 0px 3px;
+    background-color: #475569;
+    border: 2px solid #94a3b8;
+    color: white;
+    border-radius: 8px;
+    padding: 8px;
+    font-family: monospace;
+    transition-duration: 0.2s;
+    width: 88px;
+}
+
+.details-view-switch-button:hover {
+    cursor: pointer;
+    color: #22c55e;
+}
