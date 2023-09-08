@@ -35,12 +35,13 @@
     color: #22c55e;
     font-size: 20px;
     transition-duration: 0.1s;
+    text-shadow: #3ee77c 3px 0px 7px;
 }
 
 .back-search:hover {
     cursor: pointer;
     color: #3ee77c;
-    font-size: 21px;
+    /* font-size: 21px; */
 
 }
 

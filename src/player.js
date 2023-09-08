@@ -19,7 +19,7 @@ class Player extends React.Component {
             playerError: false,
             loading: true,
             playerdata: '',
-            playerDetailsData: '',
+            playerDetailsData: {},
             playerDetailsView: "none",
             lc_hidden: false,
         }
@@ -35,13 +35,19 @@ class Player extends React.Component {
 
     getPlayerSummary () {
         axios.get(`https://overfast-api.tekrop.fr/players/${this.state.playerid}/summary`)
-        .then(data => {this.setState({ playerdata: data.data, loading: false }); console.log(data.data)})
+        .then(data => {
+            this.setState({ playerdata: data.data, loading: false }); 
+            // console.log(data.data)
+        })
         .catch(error => {this.setState({ playerError: true, loading: false })})
     }
 
     getPlayerDetails () {
         axios.get(`https://overfast-api.tekrop.fr/players/${this.state.playerid}/stats/summary`)
-        .then(data => {this.setState({ playerDetailsData: data.data, lc_hidden: true, playerDetailsView: "heros" }); console.log(data.data)})
+        .then(data => {
+            this.setState({ playerDetailsData: data.data, lc_hidden: true, playerDetailsView: "heroes" });
+            // console.log(data.data)
+        })
         .catch(error => {this.setState({ playerError: true, loading: false })})
     }
 
@@ -68,8 +74,8 @@ class Player extends React.Component {
                             <LoadController gpd={this.getPlayerDetails} hidden={this.state.lc_hidden}/>
                             <div className="details-view-switch-wrapper" hidden={!this.state.lc_hidden}>
                                 <center>
-                                    <button className="details-view-switch-button heros" onClick={() => { this.changeDetailsView('heros') }}>HEROS</button>
-                                    <button className="details-view-switch-button roles" onClick={() => { this.changeDetailsView('roles') }}>ROLES</button>
+                                    <button className={`details-view-switch-button heros ${this.state.playerDetailsView == "heroes" ? "active-view" : ""}`} onClick={() => { this.changeDetailsView('heroes') }}>HEROES</button>
+                                    <button className={`details-view-switch-button roles ${this.state.playerDetailsView == "roles" ? "active-view" : ""}`} onClick={() => { this.changeDetailsView('roles') }}>ROLES</button>
                                 </center>
                             </div>
                             <PlayerDetails data={this.state.playerDetailsData} view={this.state.playerDetailsView}/>
