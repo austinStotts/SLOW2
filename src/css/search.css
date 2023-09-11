@@ -37,7 +37,7 @@ body {
     outline: none;
     grid-column: l / r;
     height: 30px;
-    border-radius: 8px;
+    border-radius: 3px;
     padding: 3px;
     padding-right: 6px;
     font-size: 18px;
@@ -60,12 +60,12 @@ body {
     height: 40px;
     background-color: #475569;
     border: 2px solid #94a3b8;
-    border-radius: 8px;
+    border-radius: 3px;
     padding: 3px;
     font-size: 20px;
     font-style: italic;
     font-family: monospace;
-    transition-duration: 0.3s;
+    transition-duration: 0.1s;
     font-weight: 600;
     color: #cbd5e1;
     margin: 5px 0px;
@@ -75,3 +75,73 @@ body {
     cursor: pointer;
     color: #22c55e;
 }
+
+.slow {
+    /* border: 1px dashed red; */
+    position: fixed;
+    top: 25px;
+    left: 100px;
+    font-family: monospace;
+    color: rgb(255, 170, 66);
+    font-size: 22px;
+}
+
+.slow:hover {
+    cursor: pointer;
+}
+
+.l-s {
+    font-size: 26px;
+    color: darkorange;
+}
+
+.l-l {
+    font-size: 26px;
+    color: darkorange;
+}
+
+.l-ow {
+    font-size: 26px;
+    color: darkorange;
+}
+
+.info-wrapper {
+    background-color: #94a3b8;
+    border: 2px solid #475569;
+    border-radius: 10px;
+    top: 35%;
+    z-index: 100;
+    padding: 20px;
+    font-family: monospace;
+    font-style: italic;
+}
+
+.info-item {
+
+}
+
+.mail {
+    color: #22c55e;
+    text-shadow: #334155 1px 1px 2px;
+}
+
+.blur {
+    filter: blur(3px);
+}
+
+.close {
+    /* background-color: #475569; */
+    border: 2px solid #475569;
+    display: inline-block;
+    border-radius: 7px;
+    padding: 4px;
+    margin: 7px 0px 0px 0px;
+    transition-duration: 0.1s;
+}
+
+.close:hover {
+    cursor: pointer;
+    background-color: #64748b;
+    color: white;
+}
+
