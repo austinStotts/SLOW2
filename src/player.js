@@ -22,11 +22,13 @@ class Player extends React.Component {
             playerDetailsData: {},
             playerDetailsView: "none",
             lc_hidden: false,
+            favorite: false
         }
 
         this.getPlayerSummary = this.getPlayerSummary.bind(this);
         this.getPlayerDetails = this.getPlayerDetails.bind(this);
         this.changeDetailsView = this.changeDetailsView.bind(this);
+        this.addFavorite = this.addFavorite.bind(this);
     }
 
     componentDidMount () {
@@ -55,6 +57,12 @@ class Player extends React.Component {
         this.setState({ playerDetailsView: view })
     }
 
+    addFavorite () {
+        let favorites = window.localStorage.getItem("favorites");
+        favorites = favorites + this.state.playerid;
+        this.setState({ favorite: true });
+    }
+
     render () {
         if(this.state.loading) {
             return (<div>loading</div>)
@@ -68,7 +76,7 @@ class Player extends React.Component {
                     <div className="player-wrapper">
                         <Back />
                         <div className="player-layer-summary-wrapper">
-                            <Summary data={this.state.playerdata}/>
+                            <Summary data={this.state.playerdata} favorite={this.state.favorite} addFavorite={this.addFavorite}/>
                         </div>
                         <div className="player-layer-details-wrapper">
                             <LoadController gpd={this.getPlayerDetails} hidden={this.state.lc_hidden}/>

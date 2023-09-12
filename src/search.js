@@ -2,6 +2,7 @@ import React from "react";
 
 import './css/search.css';
 import axios from "axios";
+import Favorites from "./favorites";
 
 export default class Search extends React.Component {
     constructor () {
@@ -54,6 +55,9 @@ export default class Search extends React.Component {
                 <div className={`search-box ${this.state.blur ? "blur" : ""}`}>
                     <input onKeyDown={this.isEnter} className="search-input" autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" type="textbox" placeholder="steve#19145" onChange={this.textChange}></input>
                     <button className="search-button" onClick={this.searchPlayer}>search</button>
+                </div>
+                <div className="favorites-wrapper">
+                    <Favorites/>
                 </div>
             </div>
         )
