@@ -29,10 +29,13 @@ class Player extends React.Component {
         this.getPlayerDetails = this.getPlayerDetails.bind(this);
         this.changeDetailsView = this.changeDetailsView.bind(this);
         this.addFavorite = this.addFavorite.bind(this);
+        this.removeFavorite = this.removeFavorite.bind(this);
+        this.getFavorites = this.getFavorites.bind(this);
     }
 
     componentDidMount () {
         this.getPlayerSummary();
+        this.getFavorites();
     }
 
     getPlayerSummary () {
@@ -59,8 +62,37 @@ class Player extends React.Component {
 
     addFavorite () {
         let favorites = window.localStorage.getItem("favorites");
-        favorites = favorites + this.state.playerid;
+        if(!favorites) {
+            window.localStorage.setItem("favorites", this.state.playerid)
+        } else {
+            favorites = favorites.split(",");
+            favorites.push(this.state.playerid);
+            window.localStorage.setItem("favorites", favorites.join(","));
+        }
         this.setState({ favorite: true });
+    }
+
+    removeFavorite () {
+        let favorites = window.localStorage.getItem("favorites").split(",");
+        for(let i = 0; i < favorites.length; i++) {
+            if(favorites[i] == this.state.playerid) { 
+                favorites.splice(i, 1);
+                window.localStorage.setItem("favorites", favorites.join(","))
+                this.setState({ favorite: false })
+            }
+        }
+    }
+
+    getFavorites () {
+        let favorites = window.localStorage.getItem("favorites")
+        if(!favorites) {
+            console.log("no favorites...")
+        } else {
+            favorites = favorites.split(",");
+            for(let i = 0; i < favorites.length; i++) {
+                if(favorites[i] == this.state.playerid) { this.setState({ favorite: true }) }
+            } 
+        }
     }
 
     render () {
@@ -76,7 +108,7 @@ class Player extends React.Component {
                     <div className="player-wrapper">
                         <Back />
                         <div className="player-layer-summary-wrapper">
-                            <Summary data={this.state.playerdata} favorite={this.state.favorite} addFavorite={this.addFavorite}/>
+                            <Summary data={this.state.playerdata} favorite={this.state.favorite} addFavorite={this.addFavorite} removeFavorite={this.removeFavorite}/>
                         </div>
                         <div className="player-layer-details-wrapper">
                             <LoadController gpd={this.getPlayerDetails} hidden={this.state.lc_hidden}/>
