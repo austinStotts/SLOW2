@@ -66,8 +66,14 @@ class Player extends React.Component {
             window.localStorage.setItem("favorites", this.state.playerid)
         } else {
             favorites = favorites.split(",");
-            favorites.push(this.state.playerid);
-            window.localStorage.setItem("favorites", favorites.join(","));
+            if(favorites.length >= 5) {
+                favorites.pop();
+                favorites.unshift(this.state.playerid);
+                window.localStorage.setItem("favorites", favorites.join(","));
+            } else {
+                favorites.unshift(this.state.playerid);
+                window.localStorage.setItem("favorites", favorites.join(","));
+            }
         }
         this.setState({ favorite: true });
     }

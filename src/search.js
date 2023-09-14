@@ -48,15 +48,16 @@ export default class Search extends React.Component {
                     <div className="info-item">this is a personal project for my own use</div>
                     <div className="info-item">if you have any issues / concerns</div>
                     <div className="info-item">send an email to <span className="mail">stevelovescartoons@gmail.com</span></div>
-                    <div className="info-item">v1.0.1</div>
+                    <div className="info-item">v1.0.2</div>
                     <div className="close" onClick={this.showInfo}>close</div>
                 </dialog>
                 <div className="slow" onClick={this.showInfo}><span className="l-s b">S</span>teve<span className="l-l b">L</span>oves<span className="l-ow b">OW</span></div>
-                <div className={`search-box ${this.state.blur ? "blur" : ""}`}>
-                    <input onKeyDown={this.isEnter} className="search-input" autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" type="textbox" placeholder="steve#19145" onChange={this.textChange}></input>
-                    <button className="search-button" onClick={this.searchPlayer}>search</button>
-                </div>
-                <div className="favorites-wrapper">
+                <div className={`search-box-wrapper ${this.state.blur ? "blur" : ""}`}>
+                    <div className={`search-box`}>
+                        <input onKeyDown={this.isEnter} className="search-input" autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" type="textbox" placeholder="steve#19145" onChange={this.textChange}></input>
+                        <button className="search-button" onClick={this.searchPlayer}>search</button>
+                    </div>
+                    <div className="favorite-label">favorites:</div>
                     <Favorites/>
                 </div>
             </div>

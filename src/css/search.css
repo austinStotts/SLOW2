@@ -12,6 +12,48 @@ body {
     
 }
 
+.favorite-users-wrapper {
+
+}
+
+.user {
+    color: #22c55e;
+    font-family: monospace;
+    text-align: right;
+    margin: 2px 0px;
+}
+
+.user:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.favorite-label {
+    text-align: right;
+    color: #22c55e;
+    font-family: monospace;
+    font-style: italic;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-size: 17px;
+}
+
+.search-favorite {
+    
+    font-variation-settings:
+    'FILL' 1,
+    
+}
+
+.search-box-wrapper {
+    left: 50%;
+    top: 200px;
+    position: fixed;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 .search-box {
    
     border: 2px solid #94a3b8;
@@ -21,11 +63,7 @@ body {
     max-width: 500px;
     min-width: 300px;
     /* height: 100px; */
-    left: 50%;
-    top: 200px;
-    position: fixed;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+
     display: grid;
     padding: 10px;
     grid-template-columns: [l] 50% [m] 50% [r];

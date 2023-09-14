@@ -8,7 +8,7 @@ export default function Summary (props) {
                 <div className="summary-spread-wrapper">
                     <img className="summary-avatar" src={props.data.avatar ? props.data.avatar : "https://www.overbuff.com/_next/image?url=%2Fplayers%2Fdefault.png&w=384&q=100"}></img>
                     <div className="summary-text-wrapper">
-                        <div className="summary-name ">{props.favorite ? <span onClick={props.removeFavorite} title="un-favorite" class="star material-symbols-rounded favorite">star</span> : <span onClick={props.addFavorite} title="favorite" class="star material-symbols-rounded">star</span> } {props.data.username}</div>
+                        <div className="summary-name ">{props.favorite ? <span onClick={props.removeFavorite} title="un-favorite" className="star material-symbols-rounded favorite">star</span> : <span onClick={props.addFavorite} title="favorite" className="star material-symbols-rounded">star</span> } {props.data.username}</div>
                         <div className="summary-title">{props.data.title}</div>
                     </div>
                     <img className="endrosement-img" src={props.data.endorsement.frame}></img>
