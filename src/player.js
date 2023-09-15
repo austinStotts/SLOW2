@@ -90,7 +90,8 @@ class Player extends React.Component {
     }
 
     getFavorites () {
-        let favorites = window.localStorage.getItem("favorites")
+        let favorites = window.localStorage.getItem("favorites");
+        // console.log(favorites);
         if(!favorites) {
             console.log("no favorites...")
         } else {
@@ -103,7 +104,7 @@ class Player extends React.Component {
 
     render () {
         if(this.state.loading) {
-            return (<div>loading</div>)
+            return (<div className="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>)
         } else {
             if(this.state.playerError) {
                 return (

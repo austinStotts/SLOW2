@@ -28,6 +28,42 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.name-text-wrapper p {
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    display: inline-block;
+}
+
+.name-text {
+    display: inline-block;
+    margin: 0px;
+    background: linear-gradient(45deg, #20ff50, #1affc4, #ff36ef, #ff285d, #ff822e, #dcff42);
+    background-size: 300% 300%;
+
+    -webkit-animation: nameBKG 20s ease infinite;
+    -moz-animation: nameBKG 20s ease infinite;
+    animation: nameBKG 20s ease infinite;
+}
+    
+@-webkit-keyframes nameBKG {
+    0%{background-position:97% 0%}
+    50%{background-position:4% 100%}
+    100%{background-position:97% 0%}
+}
+@-moz-keyframes nameBKG {
+    0%{background-position:97% 0%}
+    50%{background-position:4% 100%}
+    100%{background-position:97% 0%}
+}
+@keyframes nameBKG {
+    0%{background-position:97% 0%}
+    50%{background-position:4% 100%}
+    100%{background-position:97% 0%}
+}
+
+
 .summary-title {
     font-size: 25px;
     font-style: italic;

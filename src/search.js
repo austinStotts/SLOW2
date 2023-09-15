@@ -57,7 +57,6 @@ export default class Search extends React.Component {
                         <input onKeyDown={this.isEnter} className="search-input" autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" type="textbox" placeholder="steve#19145" onChange={this.textChange}></input>
                         <button className="search-button" onClick={this.searchPlayer}>search</button>
                     </div>
-                    <div className="favorite-label">favorites:</div>
                     <Favorites/>
                 </div>
             </div>
