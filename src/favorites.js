@@ -30,7 +30,7 @@ export default class Favorites extends React.Component {
             <div className="favorite-users-wrapper">
                 <div className="favorite-label" hidden={this.state.favorites.length < 1 ? true : false}>favorites:</div>
                 {this.state.favorites.map((user) => {
-                    return(<div key={user} className="user" onClick={() => { window.location = `/player/${user}` }}>{user.split("-").join(" #")}</div>)
+                    return(<div key={user} className="user" onClick={() => { window.location = `/player/${user}` }}>{user.split("-").join("#")}</div>)
                 })}
             </div>
         )

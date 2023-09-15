@@ -145,6 +145,18 @@ body {
     color: darkorange;
 }
 
+@media
+only screen and (max-device-width : 414px) {
+    .slow {
+        left: 50%;
+        top: 50px;
+        position: fixed;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+  
+}
+
 .info-wrapper {
     background-color: #94a3b8;
     border: 2px solid #475569;
